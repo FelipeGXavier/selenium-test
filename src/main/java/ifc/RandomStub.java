@@ -1,5 +1,7 @@
 package ifc;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
@@ -15,7 +17,7 @@ public class RandomStub {
 
     private final String[] ticketLevel = {"VIP", "Clássico", "Básico"};
 
-    public ShowEntity getRandomShow() {
+    public ShowEntity getRandomShow() throws IOException {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         String showTitle = this.titles[new Random().nextInt(this.titles.length)];
         String showDescription = this.descriptions[new Random().nextInt(this.descriptions.length)];
@@ -29,7 +31,7 @@ public class RandomStub {
                 .setTitle(showTitle)
                 .setDescription(showDescription)
                 .setCep("18700480")
-                .setImageThumbnail("C://teste.png")
+                .setImageThumbnail(new File(".").getCanonicalPath() + " \\default.png".trim())
                 .setStartDate(date.format(formatter))
                 .setEndDate(date.plusDays(6L).format(formatter))
                 .setTickets(tickets)

@@ -53,7 +53,7 @@ public class SeleniumExecutor {
             driver.findElement(By.id("cep")).sendKeys(content[1]);
             driver.findElement(By.name("description")).click();
             driver.findElement(By.name("description")).sendKeys(content[2]);
-            driver.findElement(By.name("thumbnail")).sendKeys("C:\\\\Users\\\\felip\\\\Desktop\\\\Screenshot_2.png");
+            driver.findElement(By.name("thumbnail")).sendKeys(content[3]);
             driver.findElement(By.id("address")).click();
             driver.findElement(By.cssSelector(".row")).click();
             driver.findElement(By.name("start_date")).click();
